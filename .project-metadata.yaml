@@ -29,6 +29,7 @@ tasks:
     gpu: 2
     
   - type: start_application
+    bypass_authentication : true
     name: Stable Diffusion Text to Image
     subdomain: CML-text-generation-webui
     script: start_app.py
