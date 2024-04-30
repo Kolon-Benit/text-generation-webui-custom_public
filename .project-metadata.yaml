@@ -30,7 +30,7 @@ tasks:
     
   - type: start_application
     bypass_authentication : true
-    name: Stable Diffusion Text to Image
+    name: Text Generation WebUI
     subdomain: CML-text-generation-webui
     script: start_app.py
     short_summary: Create and start CML Text Generation WebUI application
