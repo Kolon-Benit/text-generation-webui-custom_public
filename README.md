@@ -1,3 +1,43 @@
+# AMP에 오픈소스 프로젝트를 애플리케이션 형태로 띄우는 법
+클라우데라에는 AMP(Applied ML Prototypes)라는 프로젝트를 Application 형태로 띄우는 기능을 제공합니다.  
+여기서는 해당 레포지토리를 기반으로 AMP 만드는 방법에 대해서 설명드리고자 합니다.  
+만약, 해당 설명을 보고도 감이 잡히지 않는 경우 [CML_AMP-Text-to-Image-with-Stable-Diffusion](https://github.com/kevinbtalbert/CML_AMP-Text-to-Image-with-Stable-Diffusion) 레포지토리도 확인하는 것을 권장드립니다.
+
+## AMP를 만들기 위한 기본적인 파일들
+: AMP에 인식하고 Application을 빌드하기 위해서는 6개의 파일이 필요합니다.
+1. [.project-metadata.yaml](.project-metadata.yaml)  
+   : 프로젝트 메타데이터 정보가 들어있습니다.**(중요: 해당 파일에서 초기 시작시에 필요한 자원량 및 허가되지 않은 접속 허용과 같은 기능을 설정할 수 있습니다.)**
+2. [catalog-entry.yaml](catalog-entry.yaml)  
+   : AMP에 보여질 기본적인 정보 작성 및 대표 이미지 설정하는 파일입니다.
+3. [download_reqs_set_vars.sh](download_reqs_set_vars.sh)  
+   : 애플리케이션 실행하는데 필요한 것들을 설치하기 위한 파일입니다. 
+4. [download_requirements.py](download_requirements.py)  
+   : 위 sh 파일을 실행시키기 위한 파일입니다.
+5. [start_app.py](start_app.py)
+   : 빌드가 완료된 app을 실행시키기 위한 파일입니다.
+6. [text_generation_webui.jpg](text_generation_webui.jpg)
+   : AMP에서 보여지는 기본 이미지를 위해 추가한 파일입니다.
+-> 위 파일들을 참조하셔서 만들고 싶은 프로토타입 앱이 있다면 생성을 진행하시면 됩니다.
+
+## AMP에 등록하기
+: AMP의 등록의 경우 CDSW -> Site Administration -> AMPS에서 등록 가능합니다.  
+등록하기 위해서는 아래 이미지와 같이 2개의 정보를 입력해야 합니다.
+1. Git Repository URL : **ex) https://github.com/Kolon-Benit/text-generation-webui-custom.git**
+2. File Name : **catalog-entry.yaml** 파일을 등록하시면 됩니다.
+![AMP1](https://github.com/Kolon-Benit/text-generation-webui-custom/assets/79644050/a9f1b157-4d36-43b8-8e8c-403b56c5e1df)
+3. 등록이 완료되었다면 AMPs에서 등록이 된 것을 확인할 수 있습니다.
+
+## AMP로 앱 빌드하기
+1. AMP에 등록이 되었다면 좌측의 AMPs 탭으로 이동하셔서 해당 프로젝트를 누른 뒤 Configure Project 버튼을 누르시면 됩니다.
+![AMP2](https://github.com/Kolon-Benit/text-generation-webui-custom/assets/79644050/1cb13215-c555-4502-be12-a338bb82c2c3)
+2. Configure Project를 눌렀다면 잠시 후에 아래와 같은 페이지가 등장하게 되는데 별도로 변경할 필요 없이 우측 하단의 **Launch Project**를 진행하면 됩니다.
+3. 해당 버튼을 클릭했다면 project-metadata에 설정했던 task 순서에 따라서 프로젝트 build가 진행되게 됩니다.
+![image](https://github.com/Kolon-Benit/text-generation-webui-custom/assets/79644050/1c472654-c472-4781-98d4-1aadcc5a193d)
+
+## 앱 실행하기
+모든 Step이 완료되었다면 좌측 탭의 Applications 탭에 들어가서 해당 프로젝트를 실행합니다.
+![image](https://github.com/Kolon-Benit/text-generation-webui-custom/assets/79644050/8f6de536-8d5f-4c93-9e4f-548fe346e48b)
+
 # Text generation web UI
 
 A Gradio web UI for Large Language Models.
