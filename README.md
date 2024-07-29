@@ -1,3 +1,5 @@
+## private으로 변경 예정 (public은 삭제)
+
 # AMP에 오픈소스 프로젝트를 애플리케이션 형태로 띄우는 법
 클라우데라에는 AMP(Applied ML Prototypes)라는 프로젝트를 Application 형태로 띄우는 기능을 제공합니다.  
 여기서는 해당 레포지토리를 기반으로 AMP 만드는 방법에 대해서 설명드리고자 합니다.  
